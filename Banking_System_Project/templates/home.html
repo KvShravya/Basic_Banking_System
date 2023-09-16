@@ -1,0 +1,14 @@
+{% extends 'base.html'%}
+{%block content%}
+ 
+    <div class="banner-section-bg-container d-flex justify-content-center flex-column" style="padding-top: 150px;">
+      <div class="text-center">
+        <h1 class="banner-heading mb-3">Welcome To KBI Bank</h1>
+        <p class="banner-caption mb-4">Banking Made Simple</p>
+        <form action="/all_customers/" method="GET">
+        <button class="custom-button">View Customers</button>
+    </form>
+        
+      </div>
+    </div>
+{%endblock%}

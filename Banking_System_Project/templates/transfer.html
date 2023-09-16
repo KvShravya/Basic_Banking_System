@@ -1,0 +1,50 @@
+{% extends 'base.html'%}
+{%block content%}
+    <div class="customers-container transfer-con" style="padding-top: 100px;">
+            <div class="table1 text-center">
+                <h2 style="margin: 0px;">Sender Details</h2>
+            <table id="cus" style="background-color: antiquewhite;">
+                <tr>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Current Balance</th>
+                  <th>Address</th>
+                  <th>Phone_no</th>
+                  </tr>
+                <tr>
+                    <td class="value">{{customer1.name}}</td>
+                    <td class="value">{{customer1.email}}</td>
+                    <td class="value">{{customer1.balance}}</td>
+                    <td class="value">{{customer1.address}}</td>
+                    <td class="value">{{customer1.phone_no}}</td>
+                </tr>
+            </table>
+     </div>
+        <div class="table1 text-center">
+            <h2 style="margin: 0px;">Recevier Details</h2>
+        <table id="cus" style="background-color: antiquewhite;">
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Current Balance</th>
+              <th>Address</th>
+              <th>Phone_no</th>
+              </tr>
+            <tr>
+                <td class="value">{{customer2.name}}</td>
+                <td class="value">{{customer2.email}}</td>
+                <td class="value">{{customer2.balance}}</td>
+                <td class="value">{{customer2.address}}</td>
+                <td class="value">{{customer2.phone_no}}</td>
+            </tr>
+        </table>
+ </div>
+        <center>
+            <form action="/tran/{{customer1.cust_id}}/{{customer2.cust_id}}" method="GET">
+            <input type="number" id="transfer_value" name="transferval" />
+            <button type="submit" class="btn btn-primary"><span class="text">Transfer</span></button>
+        </form>
+        <p class="value">{{result}}</p>
+    </center>
+    </div>
+    {%endblock%}

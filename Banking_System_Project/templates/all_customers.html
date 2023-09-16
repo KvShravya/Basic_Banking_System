@@ -1,0 +1,42 @@
+{% extends 'base.html'%}
+{%block content%}
+   <div>
+    <div class="customers-container">
+
+        <center>
+            <form action="/search/" method="GET" class=" search_all" style="padding-top: 100px;">
+                <input type="search" value="" name="search_val" style="outline: none;"/>
+                <button type="submit" class="button-70">Search</button>
+            </form>
+            
+            <table id="all_cus" style="background-color: rgb(228, 228, 228); overflow-y:auto ;">
+                <tr >
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Current Balance</th>
+                  <th>Address</th>
+                  <th>Phone_no</th>
+                  <th>Transfer</th>
+                  </tr>
+                
+                  {%for item in customer%}
+                <tr>
+                    <td class="value">{{item.name}}</td>
+                    <td class="value">{{item.email}}</td>
+                    <td class="value">{{item.balance}}</td>
+                    <td class="value">{{item.address}}</td>
+                    <td class="value">{{item.phone_no}}</td>
+                    <td><form action="/customer/{{item.cust_id}}" method="GET">
+                        <button type="submit" class="button-70">Select</button>
+                    </form></td>
+                </tr>
+            {%endfor%}
+       
+            </table>
+        
+        
+        
+        </ul></center>
+    </div>
+   </div>
+{%endblock%}

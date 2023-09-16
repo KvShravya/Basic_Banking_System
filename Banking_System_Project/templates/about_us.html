@@ -1,0 +1,52 @@
+{% extends 'base.html'%}
+{%block content%}
+
+    <div class="customers-container" style="height:1150px;padding:20px;padding-top: 100px;">
+        <div class="about_con1">
+        <div class="d-flex flex-row justify-content-center about_con">
+            {% load static %}
+            <img src="{% static 'images/bank_2.jpeg' %}" class="about_img"/>
+            <div class='branch'>
+                <h3 style="color: black;">Our branches</h3>
+                Hyderabad<br/>
+                Chennai<br/>
+                Bengaluru<br/>
+                Delhi<br/>
+              </div>
+            
+        </div>
+        <div class="d-flex flex-row justify-content-center about_con2">
+            {% load static %}
+            <img src="{% static 'images/loan.jpeg' %}" class="about_img"/>
+            <div class='loan'>
+                <h3 style="color: black;">Loans</h3>
+                House Loan <br/>
+                Education Loan<br/>
+                Agriculture Loan <br/>
+                Gold Loan<br/>
+              </div>
+            
+        </div>
+        <div class="d-flex flex-row justify-content-center about_con">
+            {% load static %}
+            <img src="{% static 'images/contact.jpg' %}" class="about_img"/>
+            <div class='contact'>
+                <h3 style="color: black;">Contact Us</h3>
+                <p>Phone: +918522851135</p>
+        <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox?compose=DmwnWrRlQHXkxXhXwRTlLSRNCXpXvxCnKWSwpXNQNRSFtqRVPLLSmtqtSQsZPXkvqlsZfdXfHWmV"><p>Email:<br/> kvshravya8754@gmail.com</p></a>
+              </div>
+            
+        </div>
+        <div class="d-flex flex-row justify-content-center about_con2">
+            {% load static %}
+            <img src="{% static 'images/follow.jpeg' %}" class="about_img"/>
+            <div class='follow'>
+                <h3 style="color: black;">Follow Us</h3>
+                <a href="https://instagram.com/shravyakv_?utm_source=qr&igshid=MzNlNGNkZWQ4Mg=="><i class="fa fa-instagram" style="font-size:28px;color:rgb(239, 74, 184);"></i></a>
+              </div>
+            
+        </div>
+    </div>
+    </div>
+ 
+{%endblock%}

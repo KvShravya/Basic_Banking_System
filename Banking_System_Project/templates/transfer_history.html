@@ -1,0 +1,31 @@
+{% extends 'base.html'%}
+{%block content%}
+
+    <div class="customers-container">
+     
+        <center>         
+            <h1 style="background-color: rgba(68, 102, 255, 0.806); color:aliceblue; padding-top: 100px;">Transactions</h1>   
+            <table id="all_cus" style="background-color: rgb(227, 227, 227);">
+                <tr >
+                  <th>Sender</th>
+                  <th>Receiver</th>
+                  <th>Amount</th>
+                  <th>Date</th>
+                  </tr>
+                
+                  {%for item in history%}
+                <tr>
+                    <td class="value">{{item.sender}}</td>
+                    <td class="value">{{item.receiver}}</td>
+                    <td class="value">{{item.amount}}</td>
+                    <td class="value">{{item.date}}</td>
+                </tr>
+            {%endfor%}
+       
+            </table>
+        
+        
+        
+        </ul></center>
+    </div>
+{%endblock%}

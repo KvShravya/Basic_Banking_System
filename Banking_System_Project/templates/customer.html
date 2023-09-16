@@ -1,0 +1,72 @@
+{% extends 'base.html'%} {%block content%}
+<div class="customers-container " id="customerContainer">
+  <div class="table1 text-center">
+    <h2>Sender Details</h2>
+    <table id="cus" style="background-color: antiquewhite">
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Current Balance</th>
+        <th>Address</th>
+        <th>Phone_no</th>
+      </tr>
+      <tr>
+        <td class="value">{{customer.name}}</td>
+        <td class="value">{{customer.email}}</td>
+        <td class="value">{{customer.balance}}</td>
+        <td class="value">{{customer.address}}</td>
+        <td class="value">{{customer.phone_no}}</td>
+      </tr>
+    </table>
+  </div>
+  <div class="dropdown">
+    <div class="d-flex flex-row justify-content-center">
+    <button class="dropbtn button-70 " onclick="myFunction()">
+        Transfer Money
+      </button>
+    </div>
+  <div id="myDropdown" class="dropdown-content">
+    
+      
+        <input
+          type="text"
+          placeholder="Transfer to:"
+          id="myInput"
+          onkeyup="filterFunction()"
+        />
+        {%for item in customer_all%}
+        <a href="#about">
+          <form
+            action="/transfer/{{customer.cust_id}}/{{item.cust_id}}"
+            method="GET"
+          >
+            <button class="btn" type="submit">{{item.name}}</button>
+          </form></a
+        >
+
+        {%endfor%}
+    </div>
+  </div>
+</div>
+<script>
+  function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+  }
+
+  function filterFunction() {
+    var input, filter, ul, li, a, i;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    div = document.getElementById("myDropdown");
+    a = div.getElementsByTagName("a");
+    for (i = 0; i < a.length; i++) {
+      txtValue = a[i].textContent || a[i].innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        a[i].style.display = "";
+      } else {
+        a[i].style.display = "none";
+      }
+    }
+  }
+</script>
+{%endblock%}
